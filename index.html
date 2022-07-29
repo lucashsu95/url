@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/LOGO.jpg">
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="LOGO"><a href="#">LOGO</a></div>
+
+            <div class="nav-links" id="navLinks">
+                <div class="fa" onclick="hideMenu()"><img src="./img/./close(黑).png" alt="close"></div>
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+            <div class="fa" onclick="showMenu()"><img src="./img/menu(黑).png" alt="menu"></div>
+        </div>
+    </header>
+
+
+    <div class="carousel">
+
+        <div class="container">
+            <img src="./img/輪地瓜.jpg" alt="">
+            <img src="./img/輪芋頭.jpg" alt="">
+            <img src="./img/輪綠竹筍.jpg" alt="">
+
+        </div>
+
+        <div class="shift">
+            <button class='btn left' onclick="leftShift()">&lt;</button>
+            <button class='btn right' onclick="rightShift()">&gt;</button>
+        </div>
+
+        <div class="bottom">
+            <button class='indicator' onclick="setIndex(0)"></button>
+            <button class='indicator' onclick="setIndex(1)"></button>
+            <button class='indicator' onclick="setIndex(2)"></button>
+        </div>
+    </div>
+    <section>
+        <h1>新北特色</h1>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/芋頭T.jpg" alt="left">
+            </div>
+            <div class="content">
+                <h2>檳榔心芋</h2>
+                <p>
+                    地區：金山區<br>
+                    介紹：盛產期：9~10月<br>
+                    1.金山跳石海岸梯田，特殊地質條件、環境氣候<br>
+                    2.口感：香、又Q、且鬆軟<br>
+                    3.芋頭的葉柄亦含有多量鈣、磷、鐵，可當蔬菜食用，也可醃製加工曬乾煮湯或甜點<br>
+                    4.知名的九份芋圓也採用跳石芋做原料<br>
+
+                </p>
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="content" style="border: dashed black 3px;">
+                <h2>紅心地瓜</h2>
+                <p>
+                    地區：金山區<br>
+                    介紹：台農66號 特徵：紅皮紅肉 盛產期：春夏<br>
+                    1.嘗起來：感細軟、甜度高、水分含量也高<br>
+                    2.適合料理：煮、蒸、烤、食品加工<br>
+                    3.地瓜含豐富維生素C、是攝取鎂的好來源、也可以攝取到鉀、血糖上升較慢、含有豐富類胡蘿蔔素<br>
+                </p>
+            </div>
+            <div class="img-inset">
+                <img src="./img/地瓜.jpg" alt="right">
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/筍子T.jpg" alt="left">
+            </div>
+            <div class="content">
+                <h2>綠筍子</h2>
+                <p>
+                    地區：八里區<br>
+                    介紹：盛產期：6~9月<br>
+                    1. 口感：嫩甜美，猶如細嫩水梨<br>
+                    2. 外型色澤像黃金般鮮亮，所以取作「黃金筍」<br>
+                    3. 存放較久或「出青」來不及收成，導致筍尖稍微呈現綠色的綠竹筍，口感脆而香氣足，相對纖維度較高<br>
+
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script>
+    var navLinks = document.getElementById('navLinks');
+    function showMenu() {
+        navLinks.style.right = '0';
+
+    }
+    function hideMenu() {
+        navLinks.style.right = '-200px';
+
+    }
+
+    //<-------------------------------.----------------------------------->
+    function createAuto() {
+        return setInterval(() => {
+            index++
+            refresh()
+
+        }, 3000)
+    }
+    let autoTimer = createAuto()
+
+
+
+    let index = 0
+    function refresh() {
+
+        if (index < 0) {
+            index = 2
+        } else if (index > 2) {
+            index = 0
+        }
+
+        let carousel = document.querySelector('.carousel')
+
+        let width = getComputedStyle(carousel).width
+        width = Number(width.slice(0, -2))
+
+        carousel.querySelector('.container').style.left =
+            index * width * -1 + "px"
+
+    }
+
+    function leftShift() {
+        index--
+        refresh()
+        clearInterval(autoTimer)
+        autoTimer = createAuto()
+        return result
+    }
+
+    function rightShift() {
+        index++
+        refresh()
+        clearInterval(autoTimer)
+        autoTimer = createAuto()
+        return result
+    }
+    function setIndex(idx) {
+        index = idx
+        refresh()
+        clearInterval(autoTimer)
+        autoTimer = createAuto()
+        return result
+    }
+
+
+
+
+    refresh()
+</script>
+
+
+</html>
