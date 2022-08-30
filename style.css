@@ -273,6 +273,10 @@ section h1 {
         display: none;
     }
 
+    .Imgmain {
+        display: none;
+    }
+
     .nav-links ul li {
         display: flex;
         align-items: center;
