@@ -196,7 +196,10 @@ section .container:nth-child(5) {
 }
 
 /* <--------------------container2----------------------> */
-
+section {
+    width: 100%;
+    height: 2500px;
+}
 
 .container2 {
     padding: 2% 6%;
@@ -208,7 +211,7 @@ section .container:nth-child(5) {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-left: 300px;
+
 }
 
 
