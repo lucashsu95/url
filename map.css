@@ -15,11 +15,14 @@
 }
 
 .child {
+
+    transition: all 0.5s;
     position: absolute;
 }
 
 .child:hover {
-    transform: translateY(-7px);
+
+    transform: translateY(-10px);
 }
 
 .child img:nth-child(1) {
