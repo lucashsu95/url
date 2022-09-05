@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.container2 {
+    position: relative;
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child {
+    width: 25%;
+    height: 25%;
+}
+
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 30px auto;
+    padding: 0.5% 2%;
+
+    font-size: 18px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
