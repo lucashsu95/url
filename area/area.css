@@ -1,26 +1,24 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
 .container2 {
     position: relative;
-
 }
 
-.title {
+.title>h1 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.child {
-    width: 25%;
-    height: 25%;
+.title {
+    margin: auto;
+    width: 300px;
+    height: 200px;
 }
 
+.child {
+    margin-top: -200px;
+    position: absolute;
+    z-index: -2;
+}
 
 button {
     display: flex;
