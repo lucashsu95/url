@@ -11,13 +11,13 @@
 .title {
     margin: auto;
     width: 300px;
-    height: 200px;
+    height: 500px;
 }
 
 .child {
-    margin-top: -200px;
+
     position: absolute;
-    z-index: -2;
+    z-index: -999;
 }
 
 button {
