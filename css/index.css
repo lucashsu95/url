@@ -19,7 +19,7 @@ article {
     align-items: center;
 }
 
-section {
+.btn {
     width: 150px;
     height: 35px;
 
@@ -34,30 +34,24 @@ section {
     transition: all 0.1s;
 }
 
-article>section:nth-child(3n-2) {
+article>.btn:nth-child(3n-2) {
     border: 1px solid red;
     background: red;
-}
-
-article>section:nth-child(3n-2)>a {
     color: #fff;
 }
 
-article>section:nth-child(3n-2):hover {
+article>.btn:nth-child(3n-2):hover {
     box-shadow: 4px 4px 0px 0.1px #fff,
         4px 4px 0px 1px red;
     transform: translate(-5px, -5px);
 }
 
-article>section:nth-child(3n-1) {
+article>.btn:nth-child(3n-1) {
     border: 1px solid red;
-}
-
-article>section:nth-child(3n-1)>a {
     color: red;
 }
 
-article>section:nth-child(3n-1):hover {
+article>.btn:nth-child(3n-1):hover {
     box-shadow: -10px -10px 0px 0.1px #fff,
         -10px -10px 0px 1px red,
         10px 10px 0px 0.1px #fff,
@@ -66,17 +60,13 @@ article>section:nth-child(3n-1):hover {
     transform: scale(1.1);
 }
 
-article>section:nth-child(3n) {
+article>.btn:nth-child(3n) {
     outline: none;
     background-color: rgba(100 100 100/25%);
-}
-
-article>section:nth-child(3n)>a {
     color: #555;
-
 }
 
-article>section:nth-child(3n):hover {
+article>.btn:nth-child(3n):hover {
     box-shadow: 7px 7px 0px 0.1px rgba(100 100 100/25%),
         14px 14px 0px 0.1px rgba(100 100 100/ 20%);
     transform: translate(-14px, -14px);
