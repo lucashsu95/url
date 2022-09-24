@@ -46,18 +46,18 @@ article>.btn:nth-child(3n-2):hover {
     transform: translate(-5px, -5px);
 }
 
-article>.btn:nth-child(3n-1) {
-    border: 1px solid red;
-    color: red;
-}
 
 article>.btn:nth-child(3n-1):hover {
     box-shadow: -10px -10px 0px 0.1px #fff,
-        -10px -10px 0px 1px red,
+    -10px -10px 0px 1px red,
         10px 10px 0px 0.1px #fff,
         10px 10px 0px 1px red;
     background: #fff;
     transform: scale(1.1);
+}
+article>.btn:nth-child(3n-1) {
+    border: 1px solid red;
+    color: red;
 }
 
 article>.btn:nth-child(3n) {
