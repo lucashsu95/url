@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <a href="../index.html" class="btn">Back Home Page</a>
+    <form action="form.php" method="post">
+        <div class="products"></div>
+        <div class="buycar">
+            <h1>
+                購物車
+            </h1>
+            <br><br>
+            於左方選擇您所愛
+            <br><br>
+            按下"送出"後即可完成訂單X
+            <br><br><br>
+            <div class="line"></div>
+            <div class='buyminSum'>小計$0元</div>
+            <div>運費$60元</div>
+            <div class="line"></div>
+            <div class='buySum'>0</div>
+            <br><br><br>
+            <input type="submit" value="送出">
+            <a href="./file/帳單.txt" class="btn" download>下載帳單</a>
+            <input type="hidden" name="buyminSum" value="">
+            <input type="hidden" name="buySum" value="">
+        </div>
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>
