@@ -42,7 +42,7 @@ productData.forEach((data, i) => {
         <p style='${data.style}'>NT$${data.price}</p>
         <div class="buy">
             <input type="button" value="-" onclick="add(${i}, -1)" class='btn'>
-            <input type="text" value='${data.amount}' name='${data.name}' class="price" >
+            <input type="text" oninput='f_click(${i})' value='${data.amount}' name='${data.name}' class="price" >
             <input type="button" value="+" onclick="add(${i}, 1)" class='btn'>       
         `)
 })
@@ -57,14 +57,8 @@ function add(i, n) {
     }
     productData[i].amount += n
 
-    document.querySelectorAll('.price')[i].setAttribute('value', productData[i].amount)
-    console.log('price', document.querySelectorAll('.price')[i].value)
-    console.log('-------')
-
     document.querySelectorAll('.price')[i].value = productData[i].amount
     console.log('price', document.querySelectorAll('.price')[i].value)
-    console.log('-------')
-
 
     buyminSum.innerHTML = '小計$' + Lsum + '元'
     buySum.innerHTML = '總計$' + (Lsum + 60) + '元'
@@ -72,7 +66,15 @@ function add(i, n) {
     // document.querySelector('[name="buyminSum"]').value = Lsum
     // document.querySelector('[name="buySum"]').value = Lsum + 60
 }
+function f_click(i) {
+    var price = productData[i].price;
+    var value = document.querySelectorAll('.price')[i].value;
+    old_value = value
+    Lsum -= price 
+    Lsum += price * value - old_value;
+    console.log(price, value, Lsum);
 
+}
 function f_show() {
     // console.log(i)
     var Lname = '';
