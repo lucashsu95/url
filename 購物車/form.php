@@ -1,4 +1,5 @@
 <?php
+
 // file
 $file = '';
 foreach ($_POST as $key => $value){
@@ -11,7 +12,7 @@ foreach ($_POST as $key => $value){
 $file .= "運費$60元\n";
 $file .= '小計' . ':' . '$'. $_POST['buyminSum'] . "\n" . '元';
 $file .= '總計' . ':' . '$'. $_POST['buySum'] . '元';
-$fp = fopen('file/帳單.txt','w+');
+$fp = fopen('file/帳單.txt','w');
 fwrite($fp,$file);
 fclose($fp);
 
