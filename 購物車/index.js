@@ -41,13 +41,9 @@ productData.forEach((data, i) => {
         <p class='productName'>${data.name}</p>
         <p style='${data.style}'>NT$${data.price}</p>
         <div class="buy">
-            <input type="button" value="-" onclick="add(${i}, -1)">
+            <input type="button" value="-" onclick="add(${i}, -1)" class='btn'>
             <input type="text" value='${data.amount}' name='${data.name}' class="price" >
-            <input type="button" value="+" onclick="add(${i}, 1)">
-        </div>
-
-        </div>
-        
+            <input type="button" value="+" onclick="add(${i}, 1)" class='btn'>       
         `)
 })
 
@@ -60,14 +56,31 @@ function add(i, n) {
         return '';
     }
     productData[i].amount += n
-    document.querySelectorAll('.price')[i].setAttribute('value', productData[i].amount)
 
+    document.querySelectorAll('.price')[i].setAttribute('value', productData[i].amount)
     console.log('price', document.querySelectorAll('.price')[i].value)
+    console.log('-------')
+
+    document.querySelectorAll('.price')[i].value = productData[i].amount
+    console.log('price', document.querySelectorAll('.price')[i].value)
+    console.log('-------')
+
 
     buyminSum.innerHTML = '小計$' + Lsum + '元'
     buySum.innerHTML = '總計$' + (Lsum + 60) + '元'
 
-    document.querySelector('[name="buyminSum"').value = Lsum
-    document.querySelector('[name="buySum"').value = Lsum + 60
+    // document.querySelector('[name="buyminSum"]').value = Lsum
+    // document.querySelector('[name="buySum"]').value = Lsum + 60
 }
 
+function f_show() {
+    // console.log(i)
+    var Lname = '';
+    var buyminSum = Lsum + 60 + "\n";
+    var buySum = Lsum;
+
+    productData.forEach((data, i) => {
+        Lname += data.name + ':' + data.amount + "\n"
+    })
+    alert(Lname + buyminSum + buySum);
+}
