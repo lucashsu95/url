@@ -2,35 +2,23 @@ const products = document.querySelector('.products')
 const price = document.querySelector('#price')
 var Lsum = 0;
 const productData = [{
-    img: 'images/坎蒂斯.png',
+    img: 'images/sweet potato.jpg',
     style: 'color:#ff1000;font-weight:bold;',
-    name: '坎蒂斯',
+    name: '地瓜',
     price: 25,
     amount: 0
 }, {
-    img: 'images/阿貝多.png',
+    img: 'images/Taro.jpg',
     style: 'color:#ff1000;font-weight:bold;',
-    name: '阿貝多',
+    name: '芋頭',
     price: 50,
     amount: 0
 }, {
-    img: 'images/溫迪.png',
+    img: 'images/Wendan(3).jpg',
     style: 'color:#ff1000;font-weight:bold;',
-    name: '溫迪',
+    name: '文旦',
     price: 100,
-    amount: 0
-}, {
-    img: 'images/賽諾.png',
-    style: 'color:#ff1000;font-weight:bold;',
-    name: '賽諾',
-    price: 2000,
-    amount: 0
-}, {
-    img: 'images/妮露.png',
-    style: 'color:#ff1000;font-weight:bold;',
-    name: '妮露',
-    price: 6480,
-    amount: 0
+    amount: 0   
 }]
 
 productData.forEach((data, i) => {
@@ -41,48 +29,55 @@ productData.forEach((data, i) => {
         <p class='productName'>${data.name}</p>
         <p style='${data.style}'>NT$${data.price}</p>
         <div class="buy">
-            <input type="button" value="-" onclick="add(${i}, -1)" class='btn'>
+            <input type="button" value="-" onclick="f_add(${i}, -1)" class='btn'>
             <input type="text" oninput='f_click(${i})' value='${data.amount}' name='${data.name}' class="price" >
-            <input type="button" value="+" onclick="add(${i}, 1)" class='btn'>       
+            <input type="button" value="+" onclick="f_add(${i}, 1)" class='btn'>
         `)
 })
 
-function add(i, n) {
-    buySum = document.querySelector('.buySum')
-    buyminSum = document.querySelector('.buyminSum')
-    Lsum += n * productData[i].price
-    if (Lsum < '0') {
-        Lsum = 0;
+function f_add(i, n) {
+    productData[i].amount += n
+    if (productData[i].amount < '0') {
+        productData[i].amount = 0;
         return '';
     }
-    productData[i].amount += n
 
     document.querySelectorAll('.price')[i].value = productData[i].amount
-    console.log('price', document.querySelectorAll('.price')[i].value)
-
-    buyminSum.innerHTML = '小計$' + Lsum + '元'
-    buySum.innerHTML = '總計$' + (Lsum + 60) + '元'
-
-    // document.querySelector('[name="buyminSum"]').value = Lsum
-    // document.querySelector('[name="buySum"]').value = Lsum + 60
+    // console.log('price', document.querySelectorAll('.price')[i].value)
+    f_process()
 }
 function f_click(i) {
-    var price = productData[i].price;
-    var value = document.querySelectorAll('.price')[i].value;
-    old_value = value
-    Lsum -= price 
-    Lsum += price * value - old_value;
-    console.log(price, value, Lsum);
-
+    var Lvalue = document.querySelectorAll('.price')[i].value;
+    var old = productData[i].amount
+    productData[i].amount = Number(Lvalue);
+    
+    if (!productData[i].amount){
+        productData[i].amount = 0;
+        document.querySelectorAll('.price')[i].value = old
+        alert('請輸入數字!')
+        return '';
+        // history.go(0);
+    }
+    f_process()
 }
-function f_show() {
-    // console.log(i)
-    var Lname = '';
-    var buyminSum = Lsum + 60 + "\n";
-    var buySum = Lsum;
 
+function f_process(){
+    // console.log(i)
+    var Lsum = 0;
+    var buyminSum = document.querySelector('.buyminSum');
+    var buySum = document.querySelector('.buySum');
     productData.forEach((data, i) => {
-        Lname += data.name + ':' + data.amount + "\n"
+        Lsum += Number(data.price * data.amount)
     })
-    alert(Lname + buyminSum + buySum);
+    buyminSum.innerHTML = '小計$'+Lsum+'元';
+    buySum.innerHTML = '總計'+Number(Lsum+60) +'元';
+}
+
+function f_show() {
+    var Lname = '';
+    productData.forEach((data) => {
+        Lname += data.name + ':' + data.amount + "\n"
+        Lsum += Number(data.price * data.amount)
+    })
+    alert(Lname +'小計$'+Lsum+'元\n'+'總額$'+ Number(Lsum+60)+'元');
 }
