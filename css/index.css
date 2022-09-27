@@ -20,8 +20,8 @@ article {
 }
 
 .btn {
-    width: 150px;
-    height: 35px;
+    width: 200px;
+    height: 45px;
 
     margin: 20px;
     font-size: 20px;
@@ -47,23 +47,25 @@ article>.btn:nth-child(3n-2):hover {
 }
 
 
+article>.btn:nth-child(3n-1) {
+    border: 2px solid aqua;
+    color: #444;
+}
+
 article>.btn:nth-child(3n-1):hover {
-    box-shadow: -10px -10px 0px 0.1px #fff,
-    -10px -10px 0px 1px red,
-        10px 10px 0px 0.1px #fff,
-        10px 10px 0px 1px red;
+    box-shadow: -10px -10px 0px 0.2px #fff,
+        -10px -10px 0px 2px aqua,
+        10px 10px 0px 0.2px #fff,
+        10px 10px 0px 2px aqua;
     background: #fff;
     transform: scale(1.1);
 }
-article>.btn:nth-child(3n-1) {
-    border: 1px solid red;
-    color: red;
-}
+
 
 article>.btn:nth-child(3n) {
     outline: none;
     background-color: rgba(100 100 100/25%);
-    color: #555;
+    color: #666;
 }
 
 article>.btn:nth-child(3n):hover {
