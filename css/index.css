@@ -73,3 +73,9 @@ article>.btn:nth-child(3n):hover {
         14px 14px 0px 0.1px rgba(100 100 100/ 20%);
     transform: translate(-14px, -14px);
 }
+
+@media(max-width:900px) {
+    article {
+        width: 100%;
+    }
+}
