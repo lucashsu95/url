@@ -19,7 +19,7 @@ article {
     align-items: center;
 }
 
-.btn {
+article>.btn {
     width: 250px;
     height: 45px;
 
@@ -34,25 +34,25 @@ article {
     transition: all 0.1s;
 }
 
-.btn:nth-child(3n-2) {
+article>.btn:nth-child(3n-2) {
     border: 1px solid red;
     background: red;
     color: #fff;
 }
 
-.btn:nth-child(3n-2):hover {
+article>.btn:nth-child(3n-2):hover {
     box-shadow: 4px 4px 0px 0.1px #fff,
         4px 4px 0px 1px red;
     transform: translate(-5px, -5px);
 }
 
 
-.btn:nth-child(3n-1) {
+article>.btn:nth-child(3n-1) {
     border: 2px solid aqua;
     color: #444;
 }
 
-.btn:nth-child(3n-1):hover {
+article>.btn:nth-child(3n-1):hover {
     box-shadow: -10px -10px 0px 0.2px #fff,
         -10px -10px 0px 2px aqua,
         10px 10px 0px 0.2px #fff,
@@ -62,13 +62,13 @@ article {
 }
 
 
-.btn:nth-child(3n) {
+article>.btn:nth-child(3n) {
     outline: none;
     background-color: rgba(100 100 100/25%);
     color: #666;
 }
 
-.btn:nth-child(3n):hover {
+article>.btn:nth-child(3n):hover {
     box-shadow: 7px 7px 0px 0.1px rgba(100 100 100/25%),
         14px 14px 0px 0.1px rgba(100 100 100/ 20%);
     transform: translate(-14px, -14px);
@@ -80,7 +80,6 @@ article {
     margin: 10px;
     margin-left: -10px;
     border-radius: 4px;
-    box-shadow: 1px 1px 2px 0.2px #333;
 }
 
 @media(max-width:900px) {
