@@ -82,6 +82,40 @@ article>.btn:nth-child(3n):hover {
     border-radius: 4px;
 }
 
+#marker {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    margin-top: -5px;
+    height: 50px;
+    transition: .5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+#marker::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-right: 4px solid #a6ff00;
+    border-top: 4px solid #fff700;
+    transform: rotate(-90deg) translate(100%, -50%);
+}
+
+#marker::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-right: 4px solid #ff00e1;
+    border-top: 4px solid #00ffe5;
+    transform: rotate(90deg) translate(120%, -50%);
+}
+
+
+
 @media(max-width:900px) {
     article {
         width: 100%;
