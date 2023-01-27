@@ -39,15 +39,17 @@
 
             const constraints = {
                 video: {
-                    width: 320,
-                    height: 160,
-                    facingMode: { exact: "environment" },
+                    facingMode: "environment",
                 },
             };
 
-            const videoStream = await navigator.mediaDevices.getUserMedia(
-                constraints
-            );
+            navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+                video.srcObject = stream;
+            });
+
+            // const videoStream = await navigator.mediaDevices.getUserMedia(
+            //     constraints
+            // );
 
             video.srcObject = videoStream;
 
