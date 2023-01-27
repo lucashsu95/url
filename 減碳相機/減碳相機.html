@@ -51,6 +51,10 @@
 
             video.srcObject = videoStream;
 
+            video.ondurationchange = function () {
+                predict();
+            };
+
             // append elements to the DOM
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
@@ -60,21 +64,15 @@
             }
         }
 
-        function capture() {
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            canvas
-                .getContext("2d")
-                .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-        }
-
         // run the webcam image through the image model
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(canvas);
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
-                    prediction[i].className + ":" + prediction[i].probability.toFixed(2);
+                    prediction[i].className +
+                    ": " +
+                    prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
