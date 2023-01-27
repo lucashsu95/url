@@ -12,3 +12,5 @@ items.forEach(item => {
         fs_offset(this);
     })
 })
+
+const nowTime = document.querySelector('.nowTime');
