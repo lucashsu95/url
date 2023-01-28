@@ -114,7 +114,6 @@ article>.btn:nth-child(3n):hover {
 }
 
 
-
 @media(max-width:900px) {
     article {
         width: 100%;
