@@ -7,8 +7,8 @@
     "userMetadata": {},
     "modelName": "tm-my-image-model",
     "labels": [
-        "牛排",
-        "雞排"
+        "牛肉",
+        "雞肉"
     ],
     "imageSize": 224
 }
