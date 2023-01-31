@@ -13,8 +13,9 @@ body {
 article {
     margin: 20px auto;
     width: 80%;
-    flex-wrap: wrap;
+    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -93,6 +94,7 @@ article>.btn:nth-child(3n):hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: -1;
 }
 
 #marker::before {
