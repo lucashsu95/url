@@ -1,12 +1,13 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+// document.addEventListener("deviceready", onDeviceReady, false);
 var bool = 0;
-function onDeviceReady() {
-  // Cordova is now initialized. Have fun!
+// function onDeviceReady() {
+//   // Cordova is now initialized. Have fun!
 
-  console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
-  document.getElementById("deviceready").classList.add("ready");
-}
+//   console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
+//   document.getElementById("deviceready").classList.add("ready");
+// }
 
+// Start click Btn
 document.querySelectorAll(".btn").forEach((element, index) => {
   element.addEventListener("click", function () {
     console.log("index:", index);
@@ -20,6 +21,9 @@ document.querySelectorAll(".btn").forEach((element, index) => {
       bool = 0;
       init();
     }
+    timeCount = setTimeout(() => {
+      alert("找不到目標");
+    }, 7000);
     console.log(bool);
   });
 });
@@ -77,9 +81,12 @@ async function predict() {
   }
   console.log(Lmax);
   if (Lmax[1] > 0.75) {
-    labelContainer.innerText = `${Lmax[0]}　每公克會排出${
+    clearTimeout(timeCount);
+    labelContainer.innerHTML = `<span style="color:red;">${
+      Lmax[0]
+    }</span><br>每1g會排出<span style="color:red;">${
       computers[Lmax[0]]
-    }公克的碳`;
+    }</span>g的碳`;
     document.querySelector("#footer").classList.add("footer-active");
     document.querySelector(".on").classList.add("show");
     document.querySelector(".off").classList.remove("show");
@@ -87,14 +94,30 @@ async function predict() {
   }
 }
 
+const question = document.querySelector(".question");
+const questionBox = document.querySelector(".questionBox");
+
+console.log(question);
+
+question.addEventListener("click", function () {
+  questionBox.classList.add("active");
+  console.log("hi");
+});
+
+
+const closeQuestionBox = document.querySelector(".closeQuestionBox");
+closeQuestionBox.addEventListener("click", function () {
+  questionBox.classList.remove("active");
+});
+
 const computers = {
-  小麥和黑麥: 14,
+  小麥: 14,
   玉米: 1,
   米: 4,
   木薯: 1,
   牛肉: 60,
   羊肉: 24,
-  蝦: 12,
+  蝦子: 12,
   豬肉: 7,
   雞肉: 6,
   魚肉: 3,

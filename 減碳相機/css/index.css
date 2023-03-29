@@ -52,8 +52,8 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: 0.5s all;
-  padding-top: 30px;
+  transition: 1s all;
+  padding-top: 40px;
 }
 
 #label-container {
@@ -75,9 +75,57 @@ footer {
 .on,
 .off {
   display: none;
-  margin-bottom: auto;
 }
 
 .show {
   display: flex;
+}
+
+.question {
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.questionBox {
+  width: 100%;
+  background-color: #fff;
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px;
+  padding-left: 100px;
+  font-size: 18px;
+
+  transition: 400ms;
+  transform-origin: top right;
+  transform: translateX(-50%) scale(0);
+}
+
+.questionBox.active{
+  
+  transform: translateX(-50%) scale(1);
+}
+
+.question-container {
+  position: relative;
+  width: 50%;
+}
+
+.closeQuestionBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  padding-right: 70px;
 }
