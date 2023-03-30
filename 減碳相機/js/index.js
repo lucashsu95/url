@@ -21,9 +21,7 @@ document.querySelectorAll(".btn").forEach((element, index) => {
       bool = 0;
       init();
     }
-    timeCount = setTimeout(() => {
-      alert("找不到目標");
-    }, 7000);
+
     console.log(bool);
   });
 });
@@ -81,7 +79,6 @@ async function predict() {
   }
   console.log(Lmax);
   if (Lmax[1] > 0.75) {
-    clearTimeout(timeCount);
     labelContainer.innerHTML = `<span style="color:red;font-size:90px;margin:0 auto;display:flex;justify-content:center">${
       Lmax[0]
     }</span>每1g會排出<span style="color:red;">${
@@ -100,10 +97,9 @@ const questionBox = document.querySelector(".questionBox");
 console.log(question);
 
 question.addEventListener("click", function () {
-  questionBox.classList.add("active");
+  questionBox.classList.toggle("active");
   console.log("hi");
 });
-
 
 const closeQuestionBox = document.querySelector(".closeQuestionBox");
 closeQuestionBox.addEventListener("click", function () {
