@@ -86,7 +86,7 @@ async function predict() {
       Lmax[0]
     }</span><br>每1g會排出<span style="color:red;">${
       computers[Lmax[0]]
-    }</span>g的碳`;
+    }g</span>的碳`;
     document.querySelector("#footer").classList.add("footer-active");
     document.querySelector(".on").classList.add("show");
     document.querySelector(".off").classList.remove("show");
