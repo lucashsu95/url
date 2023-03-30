@@ -1,123 +1,129 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 微軟正黑體;
-    text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    background: #fff;
+  -webkit-touch-callout: none;
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color: #e4e4e4;
+  background-image: linear-gradient(to bottom, #a7a7a7 0%, #e4e4e4 51%);
+  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
+    "Roboto", sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  /* Padding to avoid the "unsafe" areas behind notches in the screen */
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  width: 100%;
 }
 
-article {
-    margin: 20px auto;
-    width: 80%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* <------------------index---------------------> */
+#video {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-article>.btn {
-    width: 250px;
-    height: 45px;
-
-    margin: 10px;
-    font-size: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: bold;
-    transition: all 0.1s;
+footer {
+  overflow: hidden;
+  position: fixed;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  transition: 0.5s all;
 }
 
-article>.btn:nth-child(3n-2) {
-    border: 1px solid red;
-    background: red;
-    color: #fff;
+.box {
+  width: 100%;
+  height: 90vh;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 1s all;
+  padding-top: 40px;
 }
 
-article>.btn:nth-child(3n-2):hover {
-    box-shadow: 4px 4px 0px 0.1px #fff,
-        4px 4px 0px 1px red;
-    transform: translate(-5px, -5px);
+#label-container {
+  font-size: 60px;
+  margin: auto;
 }
 
-
-article>.btn:nth-child(3n-1) {
-    border: 2px solid aqua;
-    color: #444;
+.footer-active {
+  top: 0;
 }
 
-article>.btn:nth-child(3n-1):hover {
-    box-shadow: -10px -10px 0px 0.2px #fff,
-        -10px -10px 0px 2px aqua,
-        10px 10px 0px 0.2px #fff,
-        10px 10px 0px 2px aqua;
-    background: #fff;
-    transform: scale(1.1);
+.ionicon,
+.close {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
 }
 
-
-article>.btn:nth-child(3n) {
-    outline: none;
-    background-color: rgba(100 100 100/25%);
-    color: #666;
+.on,
+.off {
+  display: none;
 }
 
-article>.btn:nth-child(3n):hover {
-    box-shadow: 7px 7px 0px 0.1px rgba(100 100 100/25%),
-        14px 14px 0px 0.1px rgba(100 100 100/ 20%);
-    transform: translate(-14px, -14px);
+.show {
+  display: flex;
 }
 
-.icon {
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    margin-left: -10px;
-    border-radius: 4px;
+.question {
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
 }
 
-#marker {
-    position: absolute;
-    top: -100px;
-    left: 50%;
-    margin-top: -5px;
-    height: 50px;
-    transition: .5s;
+.questionBox {
+  width: 100%;
+  background-color: #fff;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+
+  transition: 400ms;
+  transform-origin: top right;
+  transform: translateX(-50%) scale(0);
 }
 
-#marker::before {
-    content: '';
-    width: 15px;
-    height: 15px;
-    border-right: 4px solid #ffd700;
-    border-top: 4px solid #ffd700;
-    transform: rotate(45deg) translate(-20px, 20px);
+.questionBox.active{
+  
+  transform: translateX(-50%) scale(1);
 }
 
-#marker::after {
-    content: '';
-    width: 15px;
-    height: 15px;
-    border-right: 4px solid #ffd700;
-    border-top: 4px solid #ffd700;
-    transform: rotate(225deg) translate(-20px, 20px);
+.question-container {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;  
 }
 
-
-@media(max-width:900px) {
-    article {
-        width: 100%;
-    }
+.closeQuestionBox {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 40px;
+  padding-right: 20px;
 }
