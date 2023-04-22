@@ -1,89 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./index.css" />
 
-    <title>減碳相機</title>
-  </head>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <body>
-    <div class="app">
-      <svg xmlns="http://www.w3.org/2000/svg" class="question ionicon" viewBox="0 0 512 512"><path d="M256 80a176 176 0 10176 176A176 176 0 00256 80z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path d="M200 202.29s.84-17.5 19.57-32.57C230.68 160.77 244 158.18 256 158c10.93-.14 20.69 1.67 26.53 4.45 10 4.76 29.47 16.38 29.47 41.09 0 26-17 37.81-36.37 50.8S251 281.43 251 296" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="28"/><circle cx="250" cy="348" r="20"/></svg>
-      <div class="questionBox">
-        <section class="question-container">  
-          <h1>1. 先對準好目標物在點擊下方圓形黑色按鈕，即可開始偵測。</h1>
-          <h1>2. 如果下方圓圈裡是的正方型就代表還偵測中，請耐心等待。</h1>
-          <h1>
-            3.
-            如果一顯示不出食物名稱，可能是不夠接近目標物或是資料庫並未紀載次食物。
-          </h1>
-          <h1>4. 如有成功跳出食物名稱，可按下方X按鈕關閉視窗。</h1>
-          <ion-icon
-            name="close-circle-outline"
-            class="closeQuestionBox"
-          ></ion-icon>
-        </section>
-      </div>
-      <div id="deviceready" class="blink">
-        <main>
-          <video autoplay id="video"></video>
-          <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-          <script type="text/javascript"></script>
-        </main>
-        <footer id="footer">
-          <article class="box">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="btn on ionicon show"
-              viewBox="0 0 512 512"
-            >
-              <title>Radio Button On</title>
-              <path
-                d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                fill="none"
-                stroke="currentColor"
-                stroke-miterlimit="10"
-                stroke-width="32"
-              />
-              <circle cx="256" cy="256" r="144" />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="btn off ionicon"
-              viewBox="0 0 512 512"
-            >
-              <title>Stop Circle</title>
-              <path
-                d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                fill="none"
-                stroke="currentColor"
-                stroke-miterlimit="10"
-                stroke-width="32"
-              />
-              <path
-                d="M310.4 336H201.6a25.62 25.62 0 01-25.6-25.6V201.6a25.62 25.62 0 0125.6-25.6h108.8a25.62 25.62 0 0125.6 25.6v108.8a25.62 25.62 0 01-25.6 25.6z"
-              />
-            </svg>
-            <div id="label-container"></div>
-            <ion-icon name="close-outline" class="close"></ion-icon>
-          </article>
-        </footer>
-      </div>
+  <title>減碳相機</title>
+</head>
+
+<body>
+  <div class="app">
+    <svg xmlns="http://www.w3.org/2000/svg" class="question ionicon" viewBox="0 0 512 512">
+      <path d="M256 80a176 176 0 10176 176A176 176 0 00256 80z" fill="none" stroke="currentColor" stroke-miterlimit="10"
+        stroke-width="32" />
+      <path
+        d="M200 202.29s.84-17.5 19.57-32.57C230.68 160.77 244 158.18 256 158c10.93-.14 20.69 1.67 26.53 4.45 10 4.76 29.47 16.38 29.47 41.09 0 26-17 37.81-36.37 50.8S251 281.43 251 296"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="28" />
+      <circle cx="250" cy="348" r="20" />
+    </svg>
+    <div class="questionBox">
+      <section class="question-container">
+        <h1>1. 先對準好目標物在點擊下方圓形黑色按鈕，即可開始偵測。</h1>
+        <h1>2. 如果下方圓圈裡是的正方型就代表還偵測中，請耐心等待。</h1>
+        <h1>
+          3.
+          如果一顯示不出食物名稱，可能是不夠接近目標物或是資料庫並未紀載次食物。
+        </h1>
+        <h1>4. 如有成功跳出食物名稱，可按下方X按鈕關閉視窗。</h1>
+        <ion-icon name="close-circle-outline" class="closeQuestionBox"></ion-icon>
+      </section>
     </div>
+    <div id="deviceready" class="blink">
+      <main>
+        <video autoplay id="video"></video>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script type="text/javascript"></script>
+      </main>
+      <footer id="footer">
+        <article class="box">
+          <svg xmlns="http://www.w3.org/2000/svg" class="btn on ionicon show" viewBox="0 0 512 512">
+            <title>Radio Button On</title>
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+              stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+            <circle cx="256" cy="256" r="144" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="btn off ionicon" viewBox="0 0 512 512">
+            <title>Stop Circle</title>
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+              stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+            <path
+              d="M310.4 336H201.6a25.62 25.62 0 01-25.6-25.6V201.6a25.62 25.62 0 0125.6-25.6h108.8a25.62 25.62 0 0125.6 25.6v108.8a25.62 25.62 0 01-25.6 25.6z" />
+          </svg>
+          <div id="label-container"></div>
+          <ion-icon name="close-outline" class="close"></ion-icon>
+        </article>
+      </footer>
+    </div>
+  </div>
 
-    <script src="js/index.js"></script>
-  </body>
+  <script src="./index.js"></script>
+</body>
+
 </html>
