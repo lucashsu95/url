@@ -79,11 +79,12 @@ async function predict() {
   }
   console.log(Lmax);
   if (Lmax[1] > 0.75) {
-    labelContainer.innerHTML = `<span style="color:red;font-size:90px;margin:0 auto;display:flex;justify-content:center">${
+    labelContainer.innerHTML = `<span class='title'>${
       Lmax[0]
-    }</span>每1g會排出<span style="color:red;">${
+    }</span>
+    <div class='content'>每1g會排出<span style="color:red;">${
       computers[Lmax[0]]
-    }g</span>的碳`;
+    }g</span>的碳</div>`;
     document.querySelector("#footer").classList.add("footer-active");
     document.querySelector(".on").classList.add("show");
     document.querySelector(".off").classList.remove("show");
