@@ -79,9 +79,7 @@ async function predict() {
   }
   console.log(Lmax);
   if (Lmax[1] > 0.75) {
-    labelContainer.innerHTML = `<span class='title'>${
-      Lmax[0]
-    }</span>
+    labelContainer.innerHTML = `<span class='title'>${Lmax[0]}</span>
     <div class='content'>每1g會排出<span style="color:red;">${
       computers[Lmax[0]]
     }g</span>的碳</div>`;
@@ -106,6 +104,10 @@ const closeQuestionBox = document.querySelector(".closeQuestionBox");
 closeQuestionBox.addEventListener("click", function () {
   questionBox.classList.remove("active");
 });
+
+const database = document.querySelector(".database");
+const databaseBox = document.querySelector(".databaseBox");
+const databaseList = document.querySelector(".database-list");
 
 const computers = {
   牛肉: 60,
@@ -136,3 +138,13 @@ const computers = {
   // 棕櫚油: 8,
   // 牛奶: 3,
 };
+
+for (const [key, value] of Object.entries(computers)) {
+  const li = document.createElement("li");
+  li.textContent = `${key} 1g = ${value}g的碳排`;
+  databaseList.appendChild(li);
+}
+
+database.addEventListener("click", () => {
+  databaseBox.classList.toggle("active");
+});

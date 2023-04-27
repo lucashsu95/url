@@ -88,6 +88,7 @@ footer {
   z-index: 9999;
 }
 
+.databaseBox,
 .questionBox {
   width: 100%;
   background-color: #fff;
@@ -109,7 +110,8 @@ footer {
   transform: translateX(-50%) scale(0);
 }
 
-.questionBox.active {
+.questionBox.active,
+.databaseBox.active {
   transform: translateX(-50%) scale(1);
 }
 
@@ -118,13 +120,15 @@ footer {
   width: 100%;
 }
 
-.closeQuestionBox {
+.closedatabaseBox,.closeQuestionBox {
   position: absolute;
   top: -25px;
   right: 0;
   font-size: 40px;
   padding-right: 20px;
+  cursor: pointer;
 }
+
 .title {
   color: red;
   font-size: 75px;
@@ -132,6 +136,20 @@ footer {
   display: flex;
   justify-content: center;
 }
+
 .content {
   text-align: center;
+}
+
+img[alt="database-icon"] {
+  position: absolute;
+  width: 30px;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  z-index: 100;
+}
+
+.databaseBox {
+  transform-origin: top left;
 }
