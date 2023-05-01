@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoTxt</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="file" name="file" id="file" @change="onUpload" />
+      <h1 class="title">{{title}}</h1>
+      <div class="container">
+        <div class="col">
+          <h2 class="title">全部</h2>
+          <hr />
+          <ul id="all">
+            <li v-for="item in list" :key="item.id">
+              <input type="checkbox" name="undone" v-model="item.todo" />
+              {{item.content}}
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2 class="title">未完成</h2>
+          <hr />
+          <ul id="undone">
+            <li
+              v-for="item in list.filter(x => x.todo === false)"
+              :key="item.id"
+            >
+              <input type="checkbox" name="undone" v-model="item.todo" />
+              {{item.content}}
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2 class="title">己完成</h2>
+          <hr />
+          <ul id="finish">
+            <li v-for="item in list.filter(x => x.todo)" :key="item.id">
+              <input type="checkbox" name="undone" v-model="item.todo" />
+              {{item.content}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            title: "",
+            list: [
+              // { id: 0, content: "test", todo: false },
+              // { id: 1, content: "test2", todo: false },
+              // { id: 2, content: "test3", todo: true },
+            ],
+          };
+        },
+        methods: {
+          onUpload(e) {
+            const file = e.target.files[0];
+            const render = new FileReader();
+            render.readAsText(file);
+            render.onload = () => {
+              const datas = render.result.split("\r\n");
+              this.title = datas.shift();
+
+              datas.forEach((data, index) => {
+                this.list.push({
+                  id: index,
+                  content: data,
+                  todo: false,
+                });
+              });
+              console.log("Data 載入成功");
+            };
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
