@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 微軟正黑體;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242938;
+  color: #fff;
+}
+
+#app {
+  width: 100%;
+}
+
+#input {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  padding: 10px 0;
+}
+#input p {
+  flex: 1;
+  display: flex;
+}
+
+#list {
+  width: 50%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  #list {
+    width: 100%;
+  }
+  #input {
+    flex-direction: column;
+  }
+}
+
+.col {
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+  border: 5px solid transparent;
+  border-image: linear-gradient(315deg, #42d392 25%, #647eff) 1;
+}
+
+.title {
+  text-align: center;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 10px 5px;
+  border-bottom: 1px solid #aaa;
+}
+
+li input[type="checkbox"]:checked + div {
+  text-decoration: line-through;
+}
+
+li div {
+  flex: 1;
+}
+
+input[type="file"] {
+  display: flex;
+  margin: auto;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  zoom: 150%;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px 10px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #ddd;
+}
