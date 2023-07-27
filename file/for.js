@@ -1,23 +1,70 @@
-const for_count = document.querySelector("[for-count]");
-const count = for_count.getAttribute("for-count");
-const component = for_count.innerHTML;
-console.log(for_count, count, component);
+const n_for = [...document.querySelectorAll("[n-for]")];
+const n_rand = [...document.querySelectorAll("[n-rand]")];
 
-for (let i = 0; i < count - 1; i++) {
-  for_count.innerHTML += component;
+function shuffleArray(array) {
+  function randomSort() {
+    return Math.random() - 0.5;
+  }
+  return array.sort(randomSort);
 }
 
+// <------- for -------> 
+if (n_for) {
+
+  fs_for()
+
+}
+
+// <------- rand -------> 
+if (n_rand) {
+  fs_rand()
+}
+// <------- component -------> 
+
+
+
+
+
+function fs_for() {
+  n_for.forEach((el) => {
+
+    const for_count = el.getAttribute("n-for");
+    const component = el.innerHTML;
+
+    for (let i = 0; i < for_count - 1; i++) {
+      el.innerHTML += component;
+    }
+  })
+
+}
+
+
+function fs_rand() {
+  n_rand.forEach((el) => {
+    console.log(el);
+    const component = [...el.querySelectorAll(':scope > *')]
+    el.innerHTMl = ''
+    for (const val of shuffleArray(component)) {
+      el.appendChild(val)
+    }
+  })
+}
+
+
+
+
+
 `
-<div for-count='3'>
-// 只要在div上打上for-count='3'裡面的內容就會被斷重複的產生3次
 
+<div n-for='3'>
+// 只要在div上打上n-for='3'裡面的內容就會被斷重複的產生3次
 
-  <div class="for-count">
-    <div class="for-count__item">
-      <div class="for-count__item-title"></div>
-      <div class="for-count__item-description"></div>
-      <div class="for-count__item-price"></div>
-      <div class="for-count__item-button"></div>
+  <div class="n-for">
+    <div class="n-for__item">
+      <div class="n-for__item-title"></div>
+      <div class="n-for__item-description"></div>
+      <div class="n-for__item-price"></div>
+      <div class="n-for__item-button"></div>
     </div>
   </div>
 
