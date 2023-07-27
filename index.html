@@ -6,31 +6,55 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>URL</title>
   <link rel="icon" href="./images/LOGO.jpg" />
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.js'
-    integrity='sha512-w39cIBZHEf0ac8RERRGs+aTrQbBIpb+0qGsMCKfwvJSmN6YV8brsbYN1a/nTmuQgfrGyg7p3WI4HRu1rs3rLvw=='
-    crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/vue.js"></script>
   <link rel="stylesheet" href="./css/index.css" />
   <link rel="stylesheet" href="./css/footer.css" />
 </head>
 
 <body>
   <div id='app'>
-    <main>
-      <a href="./todoList" class="btn">TodoList</a>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-5">
+      <a class="navbar-brand" href="#">Url</a>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+        </ul>
+        <form class="d-flex my-2 my-lg-0">
+          <input class="form-control me-sm-2" type="text" placeholder="Search" v-model="search">
+        </form>
+      </div>
+    </nav>
 
-      <a href="./file/排碳計算機App/carbon.apk" class="btn"><img src="./images/icon.png" class="icon" />碳計算App</a>
+    <main class="container-fluid pt-2 overflow-y-auto">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center align-items-center g-4">
+        <template v-for="product in products">
+          <div class="col" v-if="onSearch(product)">
+            <product-box>
+              <template #title>
+                <h2 class="fw-bold" v-html="product.title"></h2>
+              </template>
+              <template #body>
+                {{product.description}}
+              </template>
+              <template #control>
+                <a class="link-primary fw-bold mx-1" :href="product.href" v-if="product.href">
+                  Go To !
+                </a>
+                <a class="btn btn-primary mx-1" :href="product.download" download v-if="product.download">
+                  下載
+                </a>
+                <button class="btn btn-secondary mx-1" v-if="product.copy" @click="copyToClipboard(product.copy)">
+                  複製 CDN
+                </button>
 
-      <a href="./減碳相機/減碳相機.html" class="btn"><img src="./images/icon.png" class="icon" />AI減碳相機</a>
-
-      <a href="./減碳大作戰/減碳大作戰.html" class="btn"><img src="./images/icon.png" class="icon" />
-        減碳大作戰
-      </a>
-
-      <a href="./file/for.js" class="btn" download> for.js </a>
-
-      <a href="./file/file_manage.zip" class="btn" download> file_manage </a>
-
-      <a href="./file/style.zip" class="btn" download> 樣式 </a>
+              </template>
+            </product-box>
+          </div>
+        </template>
+      </div>
 
     </main>
     <div class="footers">
@@ -41,28 +65,6 @@
           <div class="wave" id="wave3"></div>
           <div class="wave" id="wave4"></div>
         </div>
-        <ul class="social_icon">
-          <li>
-            <a href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-        </ul>
         <ul class="menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
