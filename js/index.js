@@ -15,7 +15,6 @@ const ProduceBox = {
                 <slot name='control'></slot>
             </div>
         </div>
-        
       </section>
     `
 };
@@ -55,17 +54,17 @@ const app = Vue.createApp({
                     copy: '',
                 },
                 {
-                    title: '<img src="./images/js.png" class="icon" />n-for.js',
+                    title: '<img src="./images/js.png" class="icon" />n.js',
                     description: '這是為了簡單重複html元素的一個小功具，只要在html元素上打上n-for="3"裡面的內容就會被斷重複的產生3次',
                     href: '',
-                    download: './file/n-for.js',
-                    copy: 'https://lucashsu95.github.io/url/file/n-for.js',
+                    download: './file/n.js',
+                    copy: 'https://lucashsu95.github.io/url/file/n.js',
                 },
                 {
                     title: '<img src="./images/python.png" class="icon" />檔案分類器.py',
-                    description: '如果資料夾或是桌面太過雜亂...沒關係! 只要使用了我們的檔案分頪器 只要丟到想要分類的資料夾在按下bat檔即可開始',
+                    description: '如果資料夾或是桌面太過雜亂...沒關係! 只要使用檔案分頪器 只要丟到想要分類的資料夾在按下bat檔即可開始',
                     href: '',
-                    download: './file/file_manage.zip',
+                    download: './file/檔案分類器.zip',
                     copy: '',
                 },
                 {
