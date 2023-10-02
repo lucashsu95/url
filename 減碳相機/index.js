@@ -141,7 +141,7 @@ const computers = {
 
 for (const [key, value] of Object.entries(computers)) {
   const li = document.createElement("li");
-  li.textContent = `${key} 1g = ${value}g的碳排`;
+  li.textContent = `${key} 1g = ${value}g of carbon emissions`;
   databaseList.appendChild(li);
 }
 
