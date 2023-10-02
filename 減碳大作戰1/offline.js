@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1696232356,
+	"version": 1682646795,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -40,8 +40,7 @@
 		"images/tiledbackground.png",
 		"images/sprite6-sheet0.png",
 		"images/sprite7-sheet0.png",
-		"images/sprite8-sheet0.png",
-		"images/遊戲封面en-sheet0.png",
+		"images/tiledbackground2.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
