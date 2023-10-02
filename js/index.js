@@ -36,7 +36,7 @@ const app = Vue.createApp({
                     title: '<img src="./images/icon.png" class="icon" />碳計算App',
                     description: '為了讓我們可以簡單得知我們一餐含多少碳足跡，於是我們製作了碳計算App可以輸入公克數目的方式來獲得碳足跡',
                     href: '',
-                    download: './file/排碳計算機App/carbon.apk',
+                    download: './file/排碳計算機App-en/carbon.apk',
                     copy: '',
                 },
                 {
