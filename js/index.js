@@ -42,14 +42,14 @@ const app = Vue.createApp({
                 {
                     title: '<img src="./images/icon.png" class="icon" />減碳大作戰',
                     description: '遊戲內容主要是以玩家操控角色躲避 高碳食物吃到低碳食物，介由玩遊戲的方式讓玩家了解到什麼是低碳食物什麼是高碳食物。',
-                    href: './減碳大作戰/減碳大作戰.html',
+                    href: './減碳大作戰1/減碳大作戰.html',
                     download: '',
                     copy: '',
                 },
                 {
                     title: '<img src="./images/icon.png" class="icon" />AI減碳相機',
                     description: '可以使用網站的攝像頭 來去辨識出是什麼食物，並且呈現出一公克排出多少的碳。',
-                    href: './減碳相機/減碳相機.html',
+                    href: './減碳相機1/減碳相機.html',
                     download: '',
                     copy: '',
                 },
