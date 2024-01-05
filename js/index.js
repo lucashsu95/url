@@ -74,6 +74,13 @@ const app = Vue.createApp({
                     download: './file/style.zip',
                     copy: '',
                 },
+                {
+                    title: '<img src="./images/python.png" class="icon" />距離目標日期還有多久.py',
+                    description: '執行bat檔後，會出一現一個彈跳視窗，要改目標日期要到程式碼裡改喔!',
+                    href: '',
+                    download: './file/date_distance.zip',
+                    copy: '',
+                },
             ]
         };
     },
