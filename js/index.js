@@ -67,6 +67,34 @@ const app = Vue.createApp({
                     download: './file/檔案分類器.zip',
                     copy: '',
                 },
+                {
+                    title: '筆劃練習.exe',
+                    description: '這是一個用smart app 軟體製做的，教你寫我的名字的軟體，這樣因該就不會有人寫錯字了吧?是「綸」啦!這是電腦可以用的.exe檔',
+                    href: '',
+                    download: 'file/筆劃練習/筆劃練習.exe',
+                    copy: '',
+                },
+                {
+                    title: '筆劃練習.apk',
+                    description: '這是一個用smart app 軟體製做的，教你寫我的名字的軟體，這樣因該就不會有人寫錯字了吧?是「綸」啦!這是android手機可以用的.apk檔，iphone的話不太行喔',
+                    href: '',
+                    download: 'file/筆劃練習/筆劃練習.apk',
+                    copy: '',
+                },
+                {
+                    title: '貓貓拼圖.apk',
+                    description: '這是一個用smart app 軟體製做的，簡單的拼圖遊戲，不用管遊戲結束的那一張圖，這是電腦可以用的.exe檔',
+                    href: '',
+                    download: 'file/貓貓拼圖/貓貓拼圖.apk',
+                    copy: '',
+                },
+                {
+                    title: '貓貓拼圖.apk',
+                    description: '這是一個用smart app 軟體製做的，簡單的拼圖遊戲，不用管遊戲結束的那一張圖，這是android手機可以用的.apk檔，iphone的話不太行喔',
+                    href: '',
+                    download: 'file/貓貓拼圖/貓貓拼圖.apk',
+                    copy: '',
+                },
             ]
         };
     },
