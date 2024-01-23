@@ -70,7 +70,15 @@ const app = Vue.createApp({
                     class: ['python'],
                     description: '如果資料夾或是桌面太過雜亂...沒關係! 只要使用檔案分頪器 只要丟到想要分類的資料夾在按下bat檔即可開始',
                     href: '',
-                    download: './file/檔案分類器.zip',
+                    download: 'https://github.com/lucashsu95/File_classification',
+                    copy: '',
+                },
+                {
+                    title: '<img src="./images/python.png" class="icon" />檔案命名器.py',
+                    class: ['python'],
+                    description: '想要快速把很多檔案重新命名就用它吧',
+                    href: '',
+                    download: 'https://github.com/lucashsu95/File_renamer',
                     copy: '',
                 },
                 {
