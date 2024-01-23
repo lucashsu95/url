@@ -82,6 +82,14 @@ const app = Vue.createApp({
                     copy: '',
                 },
                 {
+                    title: '<img src="./images/python.png" class="icon" />大量調整影像大小.py',
+                    class: ['python'],
+                    description: '這個名稱反映了它的主要功能，即批量調整圖片的大小',
+                    href: '',
+                    download: 'https://github.com/lucashsu95/batch_resize_images',
+                    copy: '',
+                },
+                {
                     title: '筆劃練習.exe',
                     class: ['smartApp'],
                     description: '這是一個用smart app 軟體製做的，教你寫我的名字的軟體，這樣因該就不會有人寫錯字了吧?是「綸」啦!這是電腦可以用的.exe檔',
