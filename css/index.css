@@ -12,6 +12,7 @@
 
 #app>main {
   padding-bottom: 20vh;
+  min-height: 80vh;
 
   &::-webkit-scrollbar {
     width: 7px;

@@ -124,7 +124,10 @@ const app = Vue.createApp({
                 }
             }
             return true
-        }
+        },
+    },
+    mounted() {
+        this.$refs.searchInput.focus();
     },
 });
 app.mount('#app')
