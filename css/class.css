@@ -1,0 +1,43 @@
+.class {
+    border: 1px solid #ccc;
+    width: max-content;
+    color: #fff;
+}
+
+
+.tool {
+    background: #222;
+}
+
+.appinventor {
+    background: #f88d34;
+}
+
+.Construct2 {
+    background: rgb(236, 0, 140);
+}
+
+.teachable {
+    background: #4285F4;
+}
+
+.js {
+    background: #ffdf00;
+    color: #222;
+}
+
+.game {
+    background: rgb(234, 74, 255);
+}
+
+.python {
+    background: linear-gradient(to left, #3c78a8, #ffe263);
+}
+
+.smartApp {
+    background: #c2000b;
+}
+
+.web {
+    background: #36f;
+}

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <script src="./js/vue.js"></script>
   <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/class.css" />
   <link rel="stylesheet" href="./css/footer.css" />
 </head>
 
@@ -28,13 +29,14 @@
       </div>
     </nav>
 
-    <main class="container-fluid pt-2 overflow-y-auto">
+    <main class="container-fluid pt-2">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center align-items-stretch g-4">
         <template v-for="product in products">
           <div class="col" v-if="onSearch(product)">
             <product-box>
               <template #title>
                 <h2 class="fw-bold" v-html="product.title"></h2>
+                <div v-for="cc in product.class" class="class mx-1 rounded-4 fw-bold" :class="cc">{{ cc }}</div>
               </template>
               <template #body>
                 {{product.description}}
