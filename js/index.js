@@ -90,6 +90,22 @@ const app = Vue.createApp({
                     copy: '',
                 },
                 {
+                    title: '<img src="./images/python.png" class="icon" />資料夾路徑README生成器.py',
+                    class: ['python'],
+                    description: '這個Python腳本的功能是讀取指定資料夾的結構，並生成一個包含目錄信息的README.md文件',
+                    href: '',
+                    download: 'https://github.com/lucashsu95/folder_path_readme_generator',
+                    copy: '',
+                },
+                {
+                    title: '<img src="./images/python.png" class="icon" />距離目標日期還有多久.py',
+                    class: ['python'],
+                    description: '輸出距離目標日期的月數,天數',
+                    href: '',
+                    download: './file/how-many-days-left.zip',
+                    copy: '',
+                },
+                {
                     title: '筆劃練習.exe',
                     class: ['smartApp'],
                     description: '這是一個用smart app 軟體製做的，教你寫我的名字的軟體，這樣因該就不會有人寫錯字了吧?是「綸」啦!這是電腦可以用的.exe檔',
