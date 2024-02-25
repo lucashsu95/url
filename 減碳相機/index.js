@@ -80,9 +80,8 @@ async function predict() {
   console.log(Lmax);
   if (Lmax[1] > 0.75) {
     labelContainer.innerHTML = `<span class='title'>${Lmax[0]}</span>
-    <div class='content'>Every 1g will be discharged<span style="color:red;">${
-      computers[Lmax[0]]
-    }g</span>of carbon</div>`;
+    <div class='content'>每1g會排出<span style="color:red;">${computers[Lmax[0]]
+      }g</span>的碳</div>`;
     document.querySelector("#footer").classList.add("footer-active");
     document.querySelector(".on").classList.add("show");
     document.querySelector(".off").classList.remove("show");
@@ -105,46 +104,54 @@ closeQuestionBox.addEventListener("click", function () {
   questionBox.classList.remove("active");
 });
 
-const database = document.querySelector(".database");
-const databaseBox = document.querySelector(".databaseBox");
-const databaseList = document.querySelector(".database-list");
 
+const databaseList = document.querySelector(".database-list");
 const computers = {
-  Beef: 60,
-  Chicken: 6,
-  Corn: 1,
-  Meters: 4,
-  Lamb: 24,
-  Peanuts: 25,
-  Banana: 0.7,
-  Fish: 3,
-  tomatoes: 14,
-  Shrimp: 12,
-  Peas: 0.9,
-  Pork: 7,
-  Apple: 0.4,
-  Eggs: 4.5,
-  Wheat: 14,
-  Nuts: 0.3,
-  Mushrooms: 1.25,
-  Citrus_fruits: 0.3,
-  Vegetables: 0.4,
-  Fungus: 1.25,
-  Coffee: 0.4,
-  // Cassava: 1,
-  // Soy milk: 0.9,
-  // cheese: 21,
-  // Olive oil: 6,
-  // Palm oil: 8,
-  // Milk: 3,
+  牛肉: 60,
+  雞肉: 6,
+  玉米: 1,
+  米: 4,
+  羊肉: 24,
+  花生: 25,
+  香蕉: 0.7,
+  魚肉: 3,
+  番茄: 14,
+  蝦子: 12,
+  豌豆: 0.9,
+  豬肉: 7,
+  蘋果: 0.4,
+  蛋: 4.5,
+  小麥: 14,
+  堅果: 0.3,
+  香菇: 1.25,
+  柑橘類水果: 0.3,
+  蔬菜類: 0.4,
+  木耳: 1.25,
+  咖啡: 0.4,
+  // 木薯: 1,
+  // 豆漿: 0.9,
+  // 奶酪: 21,
+  // 橄欖油: 6,
+  // 棕櫚油: 8,
+  // 牛奶: 3,
 };
 
 for (const [key, value] of Object.entries(computers)) {
   const li = document.createElement("li");
-  li.textContent = `${key} 1g = ${value}g of carbon emissions`;
+  li.textContent = `${key} 1g = ${value}g的碳排`;
   databaseList.appendChild(li);
 }
 
+const database = document.querySelector(".database");
+const databaseBox = document.querySelector(".databaseBox");
+
 database.addEventListener("click", () => {
   databaseBox.classList.toggle("active");
+});
+
+const closedatabaseBox = document.querySelector(".closedatabaseBox");
+
+closedatabaseBox.addEventListener("click", function () {
+  console.log(this);
+  databaseBox.classList.remove("active");
 });
