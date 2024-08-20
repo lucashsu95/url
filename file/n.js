@@ -22,9 +22,6 @@ if (n_rand) {
 // <------- component -------> 
 
 
-
-
-
 function fs_for() {
   n_for.forEach((el) => {
 
@@ -49,11 +46,6 @@ function fs_rand() {
     }
   })
 }
-
-
-
-
-
 `
 
 <div n-for='3'>
