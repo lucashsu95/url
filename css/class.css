@@ -3,41 +3,43 @@
     width: max-content;
     color: #fff;
 }
-
-
 .tool {
-    background: #222;
+    background: #4a5568; /* 柔和深灰藍 */
+}
+
+.other {
+    background: #718096; /* 柔和灰藍 */
 }
 
 .appinventor {
-    background: #f88d34;
+    background: #fbbf77; /* 柔和橙色 */
 }
 
 .Construct2 {
-    background: rgb(236, 0, 140);
+    background: #e09ec3; /* 柔和粉紫 */
 }
 
 .teachable {
-    background: #4285F4;
+    background: #90caf9; /* 柔和藍色 */
 }
 
 .js {
-    background: #ffdf00;
-    color: #222;
+    background: #ffe082; /* 柔和黃色 */
+    color: #333;
 }
 
 .game {
-    background: rgb(234, 74, 255);
+    background: #d1aaff; /* 柔和紫色 */
 }
 
 .python {
-    background: linear-gradient(to left, #3c78a8, #ffe263);
+    background: linear-gradient(to left, #90caf9, #ffe082); /* 柔和藍黃漸層 */
 }
 
 .smartApp {
-    background: #c2000b;
+    background: #f28b82; /* 柔和紅色 */
 }
 
 .web {
-    background: #36f;
+    background: #a7c7e7; /* 柔和藍色 */
 }

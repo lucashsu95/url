@@ -26,6 +26,30 @@ const app = Vue.createApp({
             search: '',
             products: [
                 {
+                    title: '字體',
+                    class: ['other'],
+                    description: 'IntelOne Mono字串，下載後解壓縮，全選點擊右鍵安裝即可',
+                    href: '',
+                    download: 'file/otf.zip',
+                    copy: '',
+                },
+                {
+                    title: 'keyviz',
+                    class: ['tool'],
+                    description: '視覺化按鍵和滑鼠操作',
+                    href: 'https://github.com/mulaRahul/keyviz/releases/tag/v2.0.0a2',
+                    download: '',
+                    copy: '',
+                },
+                {
+                    title: 'live-draw',
+                    class: ['tool'],
+                    description: '即時在螢幕上繪圖',
+                    href: 'https://github.com/antfu/live-draw/releases/tag/v0.1.2',
+                    download: '',
+                    copy: '',
+                },
+                {
                     title: '<img src="./images/html.png" class="icon" />TodoList',
                     class: ['web'],
                     description: '一個可支援txt檔的TodoList,使用了LocalStorage,所以沒辦法存留太久 :D',
@@ -104,31 +128,7 @@ const app = Vue.createApp({
                     href: '',
                     download: 'file/貓貓拼圖/貓貓拼圖.apk',
                     copy: '',
-                },
-                {
-                    title: '字體',
-                    class: ['Others'],
-                    description: 'IntelOne Mono字串，下載後解壓縮，全選點擊右鍵安裝即可',
-                    href: '',
-                    download: 'file/otf.zip',
-                    copy: '',
-                },
-                {
-                    title: 'keyviz',
-                    class: ['tool'],
-                    description: '視覺化按鍵和滑鼠操作',
-                    href: 'https://github.com/mulaRahul/keyviz/releases/tag/v2.0.0a2',
-                    download: '',
-                    copy: '',
-                },
-                {
-                    title: 'live-draw',
-                    class: ['tool'],
-                    description: '即時在螢幕上繪圖',
-                    href: 'https://github.com/antfu/live-draw/releases/tag/v0.1.2',
-                    download: '',
-                    copy: '',
-                },
+                }
             ]
         };
     },
