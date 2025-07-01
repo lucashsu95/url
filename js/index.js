@@ -1,16 +1,16 @@
 const ProduceBox = {
     template: `
       <section class='product-box p-5 h-100 border rounded'>
-        <header class='row mb-3'>
+        <header class='col-12 mb-3'>
             <slot name='title'></slot>
         </header>
         <hr>
-        <main class='row mb-3'>
+        <main class='col-12  mb-3'>
             <div class='col'>
                 <slot name='body'></slot>
             </div>
         </main>
-        <div class='control row'>
+        <div class='col-12 control'>
             <div class='col d-flex justify-content-start'>
                 <slot name='control'></slot>
             </div>
@@ -83,7 +83,7 @@ const app = Vue.createApp({
                 },
                 {
                     title: '<img src="./images/js.png" class="icon" />n.js',
-                    class: ['js'],
+                    class: ['library'],
                     description: '這是為了簡單重複html元素的一個小功具，只要在html元素上打上n-for="3"裡面的內容就會被斷重複的產生3次',
                     href: '',
                     download: './file/n.js',

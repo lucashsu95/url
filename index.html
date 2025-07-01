@@ -30,25 +30,28 @@
     </nav>
 
     <main class="container-fluid pt-2">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center align-items-stretch g-4">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center align-items-stretch g-4">
         <template v-for="product in products">
           <div class="col" v-if="onSearch(product)">
             <product-box>
               <template #title>
                 <h2 class="fw-bold" v-html="product.title"></h2>
-                <div v-for="cc in product.class" class="class mx-1 rounded-4 fw-bold" :class="cc">{{ cc }}</div>
+                
+                <section class="d-flex gap-2 flex-wrap">
+                  <div v-for="cc in product.class" class="class rounded-4 fw-bold" :class="cc">{{ cc }}</div>
+                </section>
               </template>
               <template #body>
                 {{product.description}}
               </template>
               <template #control>
-                <a class="link-primary fw-bold mx-1" :href="product.href" v-if="product.href">
+                <a class="link-primary fw-bold" :href="product.href" v-if="product.href">
                   Go To !
                 </a>
-                <a class="btn btn-primary mx-1" :href="product.download" download v-if="product.download">
+                <a class="btn btn-primary" :href="product.download" download v-if="product.download">
                   下載
                 </a>
-                <button class="btn btn-secondary mx-1" v-if="product.copy" @click="copyToClipboard(product.copy)">
+                <button class="btn btn-secondary" v-if="product.copy" @click="copyToClipboard(product.copy)">
                   複製 CDN
                 </button>
 

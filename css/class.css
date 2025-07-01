@@ -1,7 +1,9 @@
 .class {
-    border: 1px solid #ccc;
+    border: none;
     width: max-content;
     color: #fff;
+    border-radius: 6px;
+    padding: 0.5em 1em;
 }
 .tool {
     background: #4a5568; /* 柔和深灰藍 */
@@ -16,14 +18,14 @@
 }
 
 .Construct2 {
-    background: #e09ec3; /* 柔和粉紫 */
+    background: #d266a3; /* 柔和粉紫 */
 }
 
 .teachable {
-    background: #90caf9; /* 柔和藍色 */
+    background: #3a719d; /* 柔和藍色 */
 }
 
-.js {
+.library {
     background: #ffe082; /* 柔和黃色 */
     color: #333;
 }
@@ -41,5 +43,5 @@
 }
 
 .web {
-    background: #a7c7e7; /* 柔和藍色 */
+    background: #158aff; /* 柔和藍色 */
 }
