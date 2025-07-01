@@ -113,6 +113,22 @@ const app = Vue.createApp({
                     download: 'file/otf.zip',
                     copy: '',
                 },
+                {
+                    title: 'keyviz',
+                    class: ['tool'],
+                    description: '視覺化按鍵和滑鼠操作',
+                    href: 'https://github.com/mulaRahul/keyviz/releases/tag/v2.0.0a2',
+                    download: '',
+                    copy: '',
+                },
+                {
+                    title: 'live-draw',
+                    class: ['tool'],
+                    description: '即時在螢幕上繪圖',
+                    href: 'https://github.com/antfu/live-draw/releases/tag/v0.1.2',
+                    download: '',
+                    copy: '',
+                },
             ]
         };
     },
