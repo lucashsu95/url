@@ -34,6 +34,14 @@ const app = Vue.createApp({
                     copy: '',
                 },
                 {
+                    title: '2025-08-06 網頁設計陪訓',
+                    class: ['python'],
+                    description: '',
+                    href: '',
+                    download: './file/0806_web_design_training.zip',
+                    copy: '',
+                },
+                {
                     title: 'keyviz',
                     class: ['tool'],
                     description: '視覺化按鍵和滑鼠操作',
